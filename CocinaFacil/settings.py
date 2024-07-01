@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '0uoqpu$bn)56z^cv+y^wu3h%+)w%dcqkhx097
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'https://proyectodjango-nqnh.onrender.com').split(',')
+ALLOWED_HOSTS = ['.cleverapps.io', 'proyectodjango.cleverapp.io']
 
 # Application definition
 INSTALLED_APPS = [
@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'CocinaFacil.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.config(default=os.environ.get('POSTGRESQL_ADDON_URI'))
 }
 
 # Password validation
