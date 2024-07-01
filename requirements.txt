@@ -1,0 +1,14 @@
+asgiref==3.7.2
+dj-database-url==2.2.0
+Django==4.2.6
+django-heroku==0.3.1
+Pillow==10.1.0
+psycopg2-binary==2.9.9  # psycopg2 y psycopg2-binary son lo mismo, mantener solo uno
+setuptools==68.2.2
+sqlparse==0.4.4
+typing_extensions==4.12.2
+tzdata==2023.3
+whitenoise==6.7.0
+gunicorn==20.1.0  # Añadido para el servidor WSGI
+python-decouple==3.8  # Añadido para manejar variables de entorno
+djangorestframework==3.14.0  # Añadido si usas Django REST Framework
