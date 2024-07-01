@@ -26,10 +26,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY', 'django-insecure-0+bdvnpfbs=m+c+f!=r54q*p_^ee+n%cpl!s#2y^!&258cazz3')
+SECRET_KEY = os.environ.get('SECRET_KEY', '0uoqpu$bn)56z^cv+y^wu3h%+)w%dcqkhx0972^u)@k05c%s%$')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = ['https://proyecto-djangopaee.onrender.com']
 
@@ -78,14 +79,7 @@ WSGI_APPLICATION = 'CocinaFacil.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'proyecto_django_54tm',
-        'USER': 'proyecto_django_54tm_user',
-        'PASSWORD': 'Jh9ZZBGyCPhI6UACRUPBpJLB6GqfVizy',
-        'HOST': 'dpg-cq113kbv2p9s73cigj60-a',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
 
 
