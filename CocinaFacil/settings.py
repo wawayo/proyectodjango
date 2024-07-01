@@ -78,8 +78,15 @@ WSGI_APPLICATION = 'CocinaFacil.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('POSTGRESQL_ADDON_URI'))
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'wawayo$dbs',
+        'USER': 'wawayo',
+        'PASSWORD': '779415404143sS',
+        'HOST': 'wawayo.mysql.pythonanywhere-services.com',
+    }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
